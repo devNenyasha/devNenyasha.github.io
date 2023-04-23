@@ -1,9 +1,13 @@
 ---
+import Header from "../components/Header.astro";
+import Footer from '../components/Footer.astro';
+import "../styles/global.css";
+
 export interface Props {
-	title: string;
+	title?: string;
 }
 
-const { title } = Astro.props;
+const { title = "LekkerInvoice"} = Astro.props as Props;
 ---
 
 <!DOCTYPE html>
@@ -11,12 +15,14 @@ const { title } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="https://emoji.slack-edge.com/T5NAQ62LC/lekkerinvoice/95f785fbc903315b.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 <style is:global>
