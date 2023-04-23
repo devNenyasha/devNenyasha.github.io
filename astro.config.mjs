@@ -6,5 +6,8 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: 'https://devNenyasha.github.io',
   integrations: [react()],
-  outDir: './docs'
+  outDir: './docs',
+  build: {
+    assets: 'assets',
+  },
 });
